@@ -1,0 +1,122 @@
+body{
+    background-image: url(./image/i.webp);
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+    margin: 0;
+}
+
+.div-body{
+    /* position: relative; */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+.div-body .body-image{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+
+    animation-name:body-image ;
+    animation-duration: 1.5s;
+    animation-delay: 0s;
+    animation-fill-mode: both;
+}
+
+@keyframes body-image {
+
+    0%{opacity: 0;}
+
+    100%{
+        opacity: 1;
+    }
+
+    
+}
+
+
+.div-main{
+    background-color: rgba(65, 65, 65, 0.493);
+    width: 80%;
+    height: 500px;
+    /* margin: 5% auto; */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+.div-main .search{
+    width: 100%;
+    margin: 10% 0%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+
+.div-main .search input{
+    background-color:white;
+    color:black;
+    outline: none;
+    border: none;
+    border-radius: 50px;
+    width: 50%;
+    padding: 2% 2%;
+    text-align: center;
+}
+
+/* :-internal-autofill-selected{
+    background-color: rgba(0, 0, 0, 0.555) !important;
+ 
+} */
+
+
+
+.div-main .search input::placeholder {
+    color: black; 
+}
+
+.div-main .search button{
+background-color: transparent;
+border: none;
+position: absolute;
+right: 25%;
+top: 35%;
+cursor: pointer;
+
+}
+
+/* .div-main .search button .fa-solid, .fas {
+    color: white;
+} */
+
+.div-main .temperature{
+    display: flex;
+    justify-content: space-evenly;
+   gap: 50px; 
+}
+
+
+
+
+
+.div-main .temperature{
+    color: white;
+}
+
+.div-main .temperature .div-colum{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+}
+
