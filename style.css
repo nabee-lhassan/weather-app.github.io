@@ -1,9 +1,10 @@
 body{
-    background-image: url(./image/i.webp);
+    background-image: url(https://storage.myseldon.com/news-pict-f6/F6B588FA0472641993A5327D0F6BB23F);
     background-size: cover;
     background-position: center center;
     overflow: hidden;
     margin: 0;
+    font-family: sans-serif;
 }
 
 .div-body{
@@ -17,20 +18,28 @@ body{
 }
 
 .div-body .body-image{
-    position: absolute;
+    position:fixed;
     top: 0%;
     left: 0%;
     z-index: 0;
     width: 100%;
     height: 100%;
-
-    animation-name:body-image ;
+transition: 1.5s;
+    /* animation-name:body-image ;
     animation-duration: 1.5s;
     animation-delay: 0s;
-    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both; */
+
+    opacity: 0;
 }
 
-@keyframes body-image {
+.active{
+
+    opacity: 1 !important;
+}
+
+/* @keyframes body-image {
 
     0%{opacity: 0;}
 
@@ -39,7 +48,7 @@ body{
     }
 
     
-}
+} */
 
 
 .div-main{
@@ -52,6 +61,7 @@ body{
     flex-direction: column;
     align-items: center;
     z-index: 1;
+    backdrop-filter: blur(3px);
 }
 
 .div-main .search{

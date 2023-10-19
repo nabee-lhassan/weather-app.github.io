@@ -10,9 +10,6 @@ const my_btn = document.querySelector('.my-btn');
 const weatherIcon = {
 rain: "https://cdn-icons-png.flaticon.com/512/116/116251.png",
 sun:"https://cdn-icons-png.flaticon.com/512/831/831682.png",
-winter:"https://10wallpaper.com/wallpaper/2560x1600/1609/Sunbeams_light_snow_winter-Scenery_HD_Wallpaper_2560x1600.jpg",
-midWeather:"https://elmina.club/uploads/posts/2023-05/1684928330_elmina-club-p-gori-nebo-solntse-foni-krasivo-8.jpg",
-
 }
 
 console.log(weatherIcon.rain)
@@ -24,20 +21,58 @@ async function checkWeather(city){
     const data = await weather.json();
     console.log(data);
 
-    if (data.main.temp < 0){
+    if (data.main.temp <= -10){
 
 
         document.querySelector('.div-temp-icon').innerHTML = `<img width="60px" height="60px" id="tem-icon" src="${weatherIcon.rain}" alt="">`;  
      
-document.querySelector('.div-body-image').innerHTML = `<img class="body-image" src="${weatherIcon.winter}" alt="">`;   
-    }else if (data.main.temp < 10){
+// document.querySelector('.div-body-image').innerHTML = `<img class="body-image" src="${weatherIcon.winter}" alt="">`;   
+   document.getElementsByClassName('body-image')[0].classList.remove('active');   
+   document.getElementsByClassName('body-image')[1].classList.add('active');   
+   document.getElementsByClassName('body-image')[2].classList.remove('active');   
+   document.getElementsByClassName('body-image')[3].classList.remove('active');   
+   document.getElementsByClassName('body-image')[4].classList.remove('active');
+ 
+    }else if (data.main.temp < 0 ){
 
-
+        document.getElementsByClassName('body-image')[0].classList.remove('active');   
+        document.getElementsByClassName('body-image')[1].classList.remove('active'); 
+        document.getElementsByClassName('body-image')[2].classList.add('active'); 
+        document.getElementsByClassName('body-image')[3].classList.remove('active'); 
+        document.getElementsByClassName('body-image')[4].classList.remove('active');
+        document.getElementsByClassName('body-image')[5].classList.remove('active');
 
         document.querySelector('.div-temp-icon').innerHTML = `<img width="60px" height="60px" id="tem-icon" src="${weatherIcon.sun}" alt="">`;  
-     
-document.querySelector('.div-body-image').innerHTML = `<img class="body-image" src="${weatherIcon.midWeather}" alt="">`;   
 
+    }else if (data.main.temp <= 10 ){
+
+
+        document.getElementsByClassName('body-image')[0].classList.remove('active');   
+        document.getElementsByClassName('body-image')[1].classList.remove('active'); 
+        document.getElementsByClassName('body-image')[2].classList.remove('active'); 
+        document.getElementsByClassName('body-image')[3].classList.add('active'); 
+        document.getElementsByClassName('body-image')[4].classList.remove('active'); 
+        document.getElementsByClassName('body-image')[5].classList.remove('active');
+
+        document.querySelector('.div-temp-icon').innerHTML = `<img width="60px" height="60px" id="tem-icon" src="${weatherIcon.sun}" alt="">`; 
+
+    }else if(data.main.temp <= 20){
+
+        document.getElementsByClassName('body-image')[0].classList.remove('active');   
+        document.getElementsByClassName('body-image')[1].classList.remove('active'); 
+        document.getElementsByClassName('body-image')[2].classList.remove('active'); 
+        document.getElementsByClassName('body-image')[3].classList.remove('active'); 
+        document.getElementsByClassName('body-image')[4].classList.add('active'); 
+        document.getElementsByClassName('body-image')[5].classList.remove('active');
+
+    }else if(data.main.temp <= 30){
+
+        document.getElementsByClassName('body-image')[0].classList.remove('active');   
+        document.getElementsByClassName('body-image')[1].classList.remove('active'); 
+        document.getElementsByClassName('body-image')[2].classList.remove('active'); 
+        document.getElementsByClassName('body-image')[3].classList.remove('active'); 
+        document.getElementsByClassName('body-image')[4].classList.remove('active'); 
+        document.getElementsByClassName('body-image')[5].classList.add('active'); 
 
     }
 
