@@ -32,6 +32,9 @@ async function checkWeather(city){
    document.getElementsByClassName('body-image')[2].classList.remove('active');   
    document.getElementsByClassName('body-image')[3].classList.remove('active');   
    document.getElementsByClassName('body-image')[4].classList.remove('active');
+   document.getElementsByClassName('body-image')[5].classList.remove('active');
+   document.getElementsByClassName('body-image')[6].classList.remove('active');
+   document.getElementsByClassName('body-image')[7].classList.remove('active');
  
     }else if (data.main.temp < 0 ){
 
@@ -41,6 +44,8 @@ async function checkWeather(city){
         document.getElementsByClassName('body-image')[3].classList.remove('active'); 
         document.getElementsByClassName('body-image')[4].classList.remove('active');
         document.getElementsByClassName('body-image')[5].classList.remove('active');
+        document.getElementsByClassName('body-image')[6].classList.remove('active');
+        document.getElementsByClassName('body-image')[7].classList.remove('active');
 
         document.querySelector('.div-temp-icon').innerHTML = `<img width="60px" height="60px" id="tem-icon" src="${weatherIcon.sun}" alt="">`;  
 
@@ -53,6 +58,8 @@ async function checkWeather(city){
         document.getElementsByClassName('body-image')[3].classList.add('active'); 
         document.getElementsByClassName('body-image')[4].classList.remove('active'); 
         document.getElementsByClassName('body-image')[5].classList.remove('active');
+        document.getElementsByClassName('body-image')[6].classList.remove('active');
+        document.getElementsByClassName('body-image')[7].classList.remove('active');
 
         document.querySelector('.div-temp-icon').innerHTML = `<img width="60px" height="60px" id="tem-icon" src="${weatherIcon.sun}" alt="">`; 
 
@@ -64,8 +71,11 @@ async function checkWeather(city){
         document.getElementsByClassName('body-image')[3].classList.remove('active'); 
         document.getElementsByClassName('body-image')[4].classList.add('active'); 
         document.getElementsByClassName('body-image')[5].classList.remove('active');
+        document.getElementsByClassName('body-image')[6].classList.remove('active');
+        document.getElementsByClassName('body-image')[7].classList.remove('active');
 
-    }else if(data.main.temp <= 30){
+    }
+    else if(data.main.temp <= 30){
 
         document.getElementsByClassName('body-image')[0].classList.remove('active');   
         document.getElementsByClassName('body-image')[1].classList.remove('active'); 
@@ -73,6 +83,32 @@ async function checkWeather(city){
         document.getElementsByClassName('body-image')[3].classList.remove('active'); 
         document.getElementsByClassName('body-image')[4].classList.remove('active'); 
         document.getElementsByClassName('body-image')[5].classList.add('active'); 
+        document.getElementsByClassName('body-image')[6].classList.remove('active'); 
+        document.getElementsByClassName('body-image')[7].classList.remove('active');
+
+    }
+    else if(data.main.temp <= 40){
+
+        document.getElementsByClassName('body-image')[0].classList.remove('active');   
+        document.getElementsByClassName('body-image')[1].classList.remove('active'); 
+        document.getElementsByClassName('body-image')[2].classList.remove('active'); 
+        document.getElementsByClassName('body-image')[3].classList.remove('active'); 
+        document.getElementsByClassName('body-image')[4].classList.remove('active'); 
+        document.getElementsByClassName('body-image')[5].classList.remove('active'); 
+        document.getElementsByClassName('body-image')[6].classList.add('active'); 
+        document.getElementsByClassName('body-image')[7].classList.remove('active'); 
+
+    }
+    else if(data.main.temp <= 50){
+
+        document.getElementsByClassName('body-image')[0].classList.remove('active');   
+        document.getElementsByClassName('body-image')[1].classList.remove('active'); 
+        document.getElementsByClassName('body-image')[2].classList.remove('active'); 
+        document.getElementsByClassName('body-image')[3].classList.remove('active'); 
+        document.getElementsByClassName('body-image')[4].classList.remove('active'); 
+        document.getElementsByClassName('body-image')[5].classList.remove('active'); 
+        document.getElementsByClassName('body-image')[6].classList.remove('active'); 
+        document.getElementsByClassName('body-image')[7].classList.add('active'); 
 
     }
 
